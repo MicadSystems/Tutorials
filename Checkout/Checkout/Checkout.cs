@@ -1,0 +1,50 @@
+﻿using System.Collections.Generic;
+
+
+namespace Checkout
+{
+    public class Checkout
+    {
+        public int Total(List<Item> items)
+        {
+            var offerList = new Dictionary<string, int>();
+            var runningtotal=0;
+
+            foreach (var item in items)
+            {
+                runningtotal += item.Cost;
+                if (item.QuantityFree == 0)
+                {
+                    continue;
+                }
+
+                if (!offerList.ContainsKey(item.Name))
+                {
+                    offerList.Add(item.Name, 1);
+                    continue;
+                }
+
+                offerList[item.Name]++;
+
+                if (offerList[item.Name] != item.BuyQuantity)
+                {
+                    continue;
+                }
+
+                runningtotal -= (item.Cost * item.QuantityFree);
+                offerList[item.Name] = 0;
+            }
+
+            return runningtotal;
+        }
+    }
+
+    public class Item
+    {
+        public string Name { get; set; }
+        public int Cost { get; set; }
+        public bool Bogof { get; set; } = false;
+        public int BuyQuantity { get; set; } = 1;
+        public int QuantityFree { get; set; } = 0;
+    }
+}

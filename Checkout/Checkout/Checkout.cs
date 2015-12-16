@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 
 namespace Checkout
@@ -37,13 +38,19 @@ namespace Checkout
 
             return runningtotal;
         }
+
+        public void Pay()
+        {
+            var paymentService = new PaymentService();
+            if (!paymentService.Pay())
+                throw new Exception("Payment Declined!");
+        }
     }
 
     public class Item
     {
         public string Name { get; set; }
         public int Cost { get; set; }
-        public bool Bogof { get; set; } = false;
         public int BuyQuantity { get; set; } = 1;
         public int QuantityFree { get; set; } = 0;
     }

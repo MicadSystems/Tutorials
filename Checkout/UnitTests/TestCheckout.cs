@@ -43,10 +43,20 @@ namespace UnitTests
         [Test]
         public void TestThatADeclinedPaymentThrowsException()
         {
-            var checkout = new Checkout.Checkout();
+            var checkout = new Checkout.Checkout(new DummyPaymentService());
 
             Assert.Throws(Is.TypeOf<Exception>().And.Message.EqualTo("Payment Declined!"), () => checkout.Pay());
         }
 
-    }
+    
+	}
+
+	public class DummyPaymentService : IPaymentService
+	{
+		public bool Pay()
+		{
+			return true;
+		}
+	}
+
 }

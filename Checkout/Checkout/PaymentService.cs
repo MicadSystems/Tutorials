@@ -2,7 +2,7 @@
 
 namespace Checkout
 {
-    public class PaymentService
+    public class PaymentService : IPaymentService
     {
         readonly Random _random = new Random();
         public bool Pay()

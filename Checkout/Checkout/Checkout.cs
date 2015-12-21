@@ -6,7 +6,20 @@ namespace Checkout
 {
     public class Checkout
     {
-        public int Total(List<Item> items)
+	    private readonly IPaymentService _paymentService;
+
+	    public Checkout(IPaymentService paymentService)
+	    {
+		    _paymentService = paymentService;
+	    }
+
+	    public Checkout()
+	    {
+			_paymentService = new PaymentService();
+
+	    }
+
+	    public int Total(List<Item> items)
         {
             var offerList = new Dictionary<string, int>();
             var runningtotal=0;
@@ -41,8 +54,9 @@ namespace Checkout
 
         public void Pay()
         {
-            var paymentService = new PaymentService();
-            if (!paymentService.Pay())
+           
+
+            if (!_paymentService.Pay())
                 throw new Exception("Payment Declined!");
         }
     }

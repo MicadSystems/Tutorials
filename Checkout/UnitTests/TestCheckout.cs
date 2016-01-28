@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Checkout;
+using Moq;
 using NUnit.Framework;
 
 namespace UnitTests
@@ -37,7 +39,21 @@ namespace UnitTests
             {'C', new Item {Name = "Carrot", Cost =2, BuyQuantity = 2, QuantityFree = 1} },
             {'D', new Item {Name = "Weetabix", Cost =4, BuyQuantity = 3, QuantityFree = 1} },
             {'E', new Item {Name = "Booze", Cost =10, BuyQuantity = 5, QuantityFree = 2} },
-        }; 
 
+        };
+
+        [Test]
+        public void TestThatADeclinedPaymentThrowsException()
+        {
+            var ps = new Mock<IPaymentService>();
+            ps.Setup(x => x.Pay()).Returns(false);
+            
+
+            var checkout = new Checkout.Checkout(ps.Object);
+
+            Assert.Throws(Is.TypeOf<Exception>().And.Message.EqualTo("Payment Declined!"), () => checkout.Pay());
+        }
+        
     }
+    
 }

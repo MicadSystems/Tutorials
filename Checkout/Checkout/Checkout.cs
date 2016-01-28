@@ -1,10 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 
 namespace Checkout
 {
     public class Checkout
     {
+        private readonly IPaymentService _paymentService;
+
+        public Checkout()
+        {
+            _paymentService = new PaymentService();
+        }
+
+        public Checkout(IPaymentService paymentService)
+        {
+            _paymentService = paymentService;
+        }
+
         public int Total(List<Item> items)
         {
             var offerList = new Dictionary<string, int>();
@@ -36,6 +49,12 @@ namespace Checkout
             }
 
             return runningtotal;
+        }
+
+        public void Pay()
+        {
+            if (!_paymentService.Pay())
+                throw new Exception("Payment Declined!");
         }
     }
 

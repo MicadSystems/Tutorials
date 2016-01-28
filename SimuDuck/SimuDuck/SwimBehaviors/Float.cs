@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimuDuck
+namespace SimuDuck.SwimBehaviors
 {
     public class Float:ISwimBehavior
     {

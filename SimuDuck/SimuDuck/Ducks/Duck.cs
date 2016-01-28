@@ -1,6 +1,8 @@
-﻿using System;
+﻿using SimuDuck.FlyBehaviors;
+using SimuDuck.QuackBehaviors;
+using SimuDuck.SwimBehaviors;
 
-namespace SimuDuck
+namespace SimuDuck.Ducks
 {
     public abstract class Duck
     {

@@ -1,4 +1,4 @@
-﻿namespace SimuDuck
+﻿namespace SimuDuck.SwimBehaviors
 {
     public interface ISwimBehavior
     {

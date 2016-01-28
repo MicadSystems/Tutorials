@@ -1,6 +1,7 @@
 using System;
+using SimuDuck.SwimBehaviors;
 
-namespace SimuDuck
+namespace SimuDuck.Ducks
 {
     public class RobotDuck:Duck
     {

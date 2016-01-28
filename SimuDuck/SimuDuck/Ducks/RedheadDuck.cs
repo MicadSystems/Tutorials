@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimuDuck
+namespace SimuDuck.Ducks
 {
     public class RedheadDuck:Duck
     {

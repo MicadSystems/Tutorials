@@ -1,4 +1,4 @@
-﻿namespace SimuDuck
+﻿namespace SimuDuck.FlyBehaviors
 {
     public interface IFlyBehavior
     {

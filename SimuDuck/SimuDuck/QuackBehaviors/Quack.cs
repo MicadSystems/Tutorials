@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimuDuck
+namespace SimuDuck.QuackBehaviors
 {
     public class CanQuack:IQuackBehavior
     {

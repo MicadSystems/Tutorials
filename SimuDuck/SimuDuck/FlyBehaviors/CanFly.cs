@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimuDuck
+namespace SimuDuck.FlyBehaviors
 {
     public class CanFly:IFlyBehavior
     {

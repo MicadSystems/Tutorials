@@ -43,29 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CanFly.cs" />
-    <Compile Include="CanSqueak.cs" />
-    <Compile Include="CanSwim.cs" />
-    <Compile Include="DecoyDuck.cs" />
-    <Compile Include="Duck.cs" />
-    <Compile Include="Float.cs" />
-    <Compile Include="FlyNoWay.cs" />
-    <Compile Include="IFlyBehavior.cs" />
-    <Compile Include="IQuackBehavior.cs" />
-    <Compile Include="ISwimBehavior.cs" />
-    <Compile Include="MallardDuck.cs" />
-    <Compile Include="Mute.cs" />
+    <Compile Include="Ducks\DecoyDuck.cs" />
+    <Compile Include="Ducks\Duck.cs" />
+    <Compile Include="Ducks\MallardDuck.cs" />
+    <Compile Include="Ducks\RedheadDuck.cs" />
+    <Compile Include="Ducks\RobotDuck.cs" />
+    <Compile Include="Ducks\RubberDuck.cs" />
+    <Compile Include="FlyBehaviors\CanFly.cs" />
+    <Compile Include="FlyBehaviors\FlyNoWay.cs" />
+    <Compile Include="FlyBehaviors\IFlyBehavior.cs" />
+    <Compile Include="FlyBehaviors\Rockets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quack.cs" />
-    <Compile Include="RedheadDuck.cs" />
-    <Compile Include="RobotDuck.cs" />
-    <Compile Include="RubberDuck.cs" />
-    <Compile Include="Sinks.cs" />
+    <Compile Include="QuackBehaviors\CanSqueak.cs" />
+    <Compile Include="QuackBehaviors\IQuackBehavior.cs" />
+    <Compile Include="QuackBehaviors\Mute.cs" />
+    <Compile Include="QuackBehaviors\Quack.cs" />
+    <Compile Include="SwimBehaviors\CanSwim.cs" />
+    <Compile Include="SwimBehaviors\Float.cs" />
+    <Compile Include="SwimBehaviors\ISwimBehavior.cs" />
+    <Compile Include="SwimBehaviors\Sinks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

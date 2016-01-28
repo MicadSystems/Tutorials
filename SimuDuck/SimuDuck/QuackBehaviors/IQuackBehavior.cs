@@ -1,4 +1,4 @@
-﻿namespace SimuDuck
+﻿namespace SimuDuck.QuackBehaviors
 {
     public interface IQuackBehavior
     {

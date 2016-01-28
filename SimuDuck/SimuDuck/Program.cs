@@ -59,12 +59,4 @@ namespace SimuDuck
 
         }
     }
-
-    internal class Rockets : IFlyBehavior
-    {
-        public void Fly()
-        {
-            Console.WriteLine("ROOOAAARRARA!!!!!");
-        }
-    }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace SimuDuck
 {
-    internal class RobotDuck:Duck
+    public class RobotDuck:Duck
     {
         public RobotDuck()
         {
